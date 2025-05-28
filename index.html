@@ -1,237 +1,158 @@
-<!-- ==================== Parte 1: HERO DENTISTA ==================== -->
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clínica Sorriso Ideal | Avaliação Gratuita</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
-        font-family: 'Segoe UI', sans-serif;
-        color: white;
-      }
-      .glass {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-      }
-      .fade {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.8s ease;
-      }
-      .fade.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .typewriter {
-        overflow: hidden;
-        white-space: nowrap;
-        border-right: .15em solid #00ffcc;
-        animation: typewriter 3s steps(40, end) forwards, blink 0.75s step-end infinite;
-        width: 0;
-      }
-      @keyframes typewriter {
-        from { width: 0 }
-        to { width: 100% }
-      }
-      @keyframes blink {
-        0%, 100% { border-color: transparent }
-        50% { border-color: #00ffcc }
-      }
-    </style>
-  </head>
-  <body class="min-h-screen">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Landing Page Dentistas | Sorriso Fácil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; }
+    .bg-hero {
+      background: url('https://images.unsplash.com/photo-1588776814546-ec7e9c3e7fbc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-24 gap-10">
-      <!-- Texto -->
-      <div class="max-w-xl fade text-center md:text-left">
-        <h1 class="text-4xl font-bold mb-4">Seu novo <span class="typewriter">sorriso começa aqui.</span></h1>
-        <p class="text-gray-300 text-lg mb-6">Agende sua avaliação gratuita com especialistas em estética dental e transforme seu sorriso.</p>
-        <a href="https://wa.me/5513981213016" target="_blank"
-          class="inline-block bg-green-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300">
-          📱 Agendar pelo WhatsApp
-        </a>
-      </div>
+  <!-- HEADER -->
+  <header class="bg-white shadow fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Landing Page Dentistas</h1>
+      <nav class="space-x-6 text-sm md:text-base">
+        <a href="#inicio" class="text-orange-500 font-semibold">Início</a>
+        <a href="#sobre" class="hover:text-orange-500">Sobre</a>
+        <a href="#servicos" class="hover:text-orange-500">Serviços</a>
+        <a href="#blog" class="hover:text-orange-500">Blog</a>
+        <a href="#contato" class="hover:text-orange-500">Contato</a>
+        <a href="#cta" class="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition px-4 py-2 rounded-md font-semibold">AGENDE AGORA</a>
+      </nav>
+    </div>
+  </header>
 
-      <!-- Imagem -->
-      <div class="max-w-md w-full fade">
-        <img src="hero.jpg"
-          alt="Dentista atendendo paciente" class="rounded-xl shadow-xl border border-gray-700" />
-      </div>
-    </section>
+  <!-- HERO -->
+  <section id="inicio" class="bg-hero min-h-screen flex flex-col items-center justify-center px-4 text-center text-white pt-32">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Transforme seu sorriso<br>hoje mesmo</h2>
+    <p class="max-w-xl mb-6">Na Sorriso Fácil, oferecemos tratamentos de odontologia moderna e personalizada para que você tenha um sorriso saudável e bonito.</p>
+    <a href="#contato" class="bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition">AGENDE AGORA</a>
+  </section>
 
-    <script>
-      // Animação fade-in ao carregar
-      window.addEventListener("load", () => {
-        document.querySelectorAll('.fade').forEach((el, i) => {
-          setTimeout(() => el.classList.add("visible"), i * 300);
-        });
-      });
-    </script>
-    <!-- Benefícios -->
-    <section class="px-6 py-20 bg-transparent">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-10 fade">Por que escolher a Sorriso Ideal?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          <div class="glass p-6 fade hover:scale-105 transition duration-500">
-            <img src="https://img.icons8.com/ios-filled/100/ffffff/teeth.png" class="w-12 mx-auto mb-4" alt="Ícone Clareamento"/>
-            <h3 class="text-xl font-semibold mb-2">Clareamento sem dor</h3>
-            <p class="text-gray-300 text-sm">Tecnologia moderna e resultados visíveis desde a primeira sessão.</p>
-          </div>
-
-          <div class="glass p-6 fade hover:scale-105 transition duration-500">
-            <img src="https://img.icons8.com/ios-filled/100/ffffff/smile.png" class="w-12 mx-auto mb-4" alt="Ícone Lentes"/>
-            <h3 class="text-xl font-semibold mb-2">Lentes de contato dental</h3>
-            <p class="text-gray-300 text-sm">Estética perfeita com técnicas minimamente invasivas.</p>
-          </div>
-
-          <div class="glass p-6 fade hover:scale-105 transition duration-500">
-            <img src="https://img.icons8.com/ios-filled/100/ffffff/dental-braces.png" class="w-12 mx-auto mb-4" alt="Ícone Aparelho"/>
-            <h3 class="text-xl font-semibold mb-2">Ortodontia invisível</h3>
-            <p class="text-gray-300 text-sm">Aparelhos modernos e discretos com alinhamento rápido.</p>
-          </div>
-
-          <div class="glass p-6 fade hover:scale-105 transition duration-500">
-            <img src="https://img.icons8.com/ios-filled/100/ffffff/dental-chair.png" class="w-12 mx-auto mb-4" alt="Ícone Consultório"/>
-            <h3 class="text-xl font-semibold mb-2">Ambiente acolhedor</h3>
-            <p class="text-gray-300 text-sm">Consultórios climatizados e equipe atenciosa para sua segurança.</p>
-          </div>
-
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="bg-white py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center mb-12">
+      <p class="uppercase text-sm text-gray-400 tracking-wider">Nossos Serviços</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Soluções Completas para<br>Sua Saúde Bucal e Estética</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Desde estética dental até tratamentos de ortodontia, conheça nossas opções personalizadas para cuidar da sua saúde bucal com profissionalismo e carinho.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1606813909357-027c8c38661e?auto=format&fit=crop&w=600&q=80" class="w-full h-56 object-cover" alt="Estética Dental">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Estética Dental</h3>
+          <p class="text-gray-600 mb-4 text-sm">Transforme seu sorriso com clareamento e lentes de contato.</p>
+          <a href="#estetica" class="text-orange-500 font-medium hover:underline text-sm">VER MAIS →</a>
         </div>
       </div>
-    </section>
-    <!-- Depoimentos / Prova Social -->
-    <section class="px-6 py-20 bg-transparent">
-      <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-10 fade">O que nossos pacientes dizem</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          <!-- Depoimento 1 -->
-          <div class="glass p-6 fade text-left">
-            <p class="text-sm text-gray-300 italic mb-4">
-              “Eu tinha vergonha de sorrir, mas agora me sinto outra pessoa! O clareamento foi incrível.”
-            </p>
-            <div class="flex items-center gap-3">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Juliana" class="w-12 h-12 rounded-full" />
-              <div>
-                <strong class="text-white">Juliana P.</strong><br />
-                <span class="text-yellow-400">★★★★★</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Depoimento 2 -->
-          <div class="glass p-6 fade text-left">
-            <p class="text-sm text-gray-300 italic mb-4">
-              “Equipe sensacional! Me explicaram tudo com paciência e o ambiente é super limpo e confortável.”
-            </p>
-            <div class="flex items-center gap-3">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos" class="w-12 h-12 rounded-full" />
-              <div>
-                <strong class="text-white">Carlos A.</strong><br />
-                <span class="text-yellow-400">★★★★★</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Depoimento 3 -->
-          <div class="glass p-6 fade text-left">
-            <p class="text-sm text-gray-300 italic mb-4">
-              “Fiz minhas lentes aqui e fiquei chocada com o resultado. Recomendo de olhos fechados!”
-            </p>
-            <div class="flex items-center gap-3">
-              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Aline" class="w-12 h-12 rounded-full" />
-              <div>
-                <strong class="text-white">Aline F.</strong><br />
-                <span class="text-yellow-400">★★★★★</span>
-              </div>
-            </div>
-          </div>
-
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1611691542065-d6bafa25746f?auto=format&fit=crop&w=600&q=80" class="w-full h-56 object-cover" alt="Ortodontia">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Ortodontia</h3>
+          <p class="text-gray-600 mb-4 text-sm">Alinhamento dental com aparelhos e alinhadores invisíveis.</p>
+          <a href="#ortodontia" class="text-orange-500 font-medium hover:underline text-sm">VER MAIS →</a>
         </div>
       </div>
-    </section>
-    <!-- Como Funciona -->
-    <section class="px-6 py-20 bg-transparent">
-      <div class="max-w-4xl mx-auto text-center fade">
-        <h2 class="text-3xl font-bold mb-8">Como funciona?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-          <div class="glass p-6 fade">
-            <h4 class="text-xl font-semibold mb-2">1. Agende sua avaliação</h4>
-            <p class="text-gray-300 text-sm">Clique no botão do WhatsApp e escolha o melhor horário.</p>
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1627513077053-7030a5c55a12?auto=format&fit=crop&w=600&q=80" class="w-full h-56 object-cover" alt="Implantodontia">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Implantodontia</h3>
+          <p class="text-gray-600 mb-4 text-sm">Implantes e próteses para sorrisos reabilitados.</p>
+          <a href="#implante" class="text-orange-500 font-medium hover:underline text-sm">VER MAIS →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NÓS -->
+  <section id="sobre" class="bg-gray-50 py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center mb-10">
+      <p class="uppercase text-sm text-gray-400 tracking-widest">SOBRE NÓS</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">A história da Sorriso Fácil e seu<br>compromisso com sorrisos</h2>
+      <p class="text-gray-600 text-base">A Sorriso Fácil é uma clínica odontológica que prioriza o atendimento humanizado e a tecnologia de ponta.</p>
+    </div>
+    <div class="max-w-5xl mx-auto">
+      <img src="https://images.unsplash.com/photo-1606813909357-027c8c38661e?auto=format&fit=crop&w=1200&q=80" alt="Imagem clínica Sorriso Fácil" class="rounded-2xl w-full shadow-md" />
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="bg-cover bg-center bg-no-repeat py-20 px-6" style="background-image: url('https://images.unsplash.com/photo-1588776814546-ec7e9c3e7fbc?auto=format&fit=crop&w=1600&q=80'); background-color: rgba(0,0,0,0.5); background-blend-mode: overlay;">
+    <div class="max-w-6xl mx-auto text-white text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">O que nossos pacientes dizem</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white text-gray-800 rounded-xl p-6 shadow-md">
+          <div class="text-orange-500 text-3xl mb-4">“</div>
+          <p class="text-sm mb-4">Excelente atendimento e resultados surpreendentes. Amei meu novo sorriso!</p>
+          <div class="flex items-center gap-3 mt-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Lucas Silva" class="w-10 h-10 rounded-full">
+            <span class="font-semibold text-sm">Lucas Silva</span>
           </div>
-          <div class="glass p-6 fade">
-            <h4 class="text-xl font-semibold mb-2">2. Conheça seu plano</h4>
-            <p class="text-gray-300 text-sm">Na consulta, analisamos seu caso e montamos um plano personalizado.</p>
+        </div>
+        <div class="bg-white text-gray-800 rounded-xl p-6 shadow-md">
+          <div class="text-orange-500 text-3xl mb-4">“</div>
+          <p class="text-sm mb-4">Profissionais atenciosos e sempre prontos para responder às minhas dúvidas.</p>
+          <div class="flex items-center gap-3 mt-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Costa" class="w-10 h-10 rounded-full">
+            <span class="font-semibold text-sm">Ana Costa</span>
           </div>
-          <div class="glass p-6 fade">
-            <h4 class="text-xl font-semibold mb-2">3. Comece seu tratamento</h4>
-            <p class="text-gray-300 text-sm">Inicie o processo com segurança e suporte de ponta a ponta.</p>
+        </div>
+        <div class="bg-white text-gray-800 rounded-xl p-6 shadow-md">
+          <div class="text-orange-500 text-3xl mb-4">“</div>
+          <p class="text-sm mb-4">Meus filhos adoram ir ao dentista por aqui! Atendimento especial para crianças.</p>
+          <div class="flex items-center gap-3 mt-4">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Carlos Almeida" class="w-10 h-10 rounded-full">
+            <span class="font-semibold text-sm">Carlos Almeida</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Oferta com urgência -->
-    <section class="px-6 py-20 bg-transparent">
-      <div class="max-w-3xl mx-auto glass p-10 text-center fade">
-        <h3 class="text-2xl font-bold mb-4">🎁 Oferta exclusiva!</h3>
-        <p class="text-gray-300 mb-6">
-          Os agendamentos realizados até <strong>sexta-feira</strong> ganham <span class="text-green-400 font-semibold">10% de desconto</span> no clareamento dental.
-        </p>
-        <a href="https://wa.me/5513981213016" target="_blank"
-          class="bg-green-500 text-white px-6 py-3 rounded-full shadow hover:scale-110 transition">
-          📆 Agendar agora
-        </a>
+  <!-- CTA FINAL -->
+  <section id="cta" class="bg-gray-100 py-20 px-6">
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl p-10 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Não espere mais para cuidar do seu sorriso</h2>
+      <p class="text-gray-600 mb-6">Agende sua avaliação gratuita com um de nossos especialistas agora mesmo e descubra como transformar sua autoestima.</p>
+      <a href="https://wa.me/5513981213016" target="_blank" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition">📅 AGENDE AGORA</a>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-gray-900 text-gray-300 py-16 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div>
+        <h3 class="text-white font-bold text-xl mb-4">Sorriso Fácil</h3>
+        <p class="text-sm">Clínica especializada em odontologia estética, ortodontia e implantes. Tecnologia e acolhimento para transformar sorrisos todos os dias.</p>
       </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="px-6 py-20 bg-transparent">
-      <div class="max-w-4xl mx-auto fade">
-        <h3 class="text-2xl font-bold mb-6 text-center">❓ Dúvidas frequentes</h3>
-        <div class="space-y-6">
-          <div class="glass p-4">
-            <h4 class="font-semibold">A avaliação é realmente gratuita?</h4>
-            <p class="text-gray-300 text-sm">Sim! Nessa primeira consulta você entende suas necessidades sem custo.</p>
-          </div>
-          <div class="glass p-4">
-            <h4 class="font-semibold">Vocês atendem convênios?</h4>
-            <p class="text-gray-300 text-sm">Atendemos particular e alguns convênios selecionados. Consulte pelo WhatsApp.</p>
-          </div>
-          <div class="glass p-4">
-            <h4 class="font-semibold">Quais formas de pagamento aceitam?</h4>
-            <p class="text-gray-300 text-sm">Pix, boleto, cartões de crédito e parcelamento sob consulta.</p>
-          </div>
-        </div>
+      <div>
+        <h4 class="text-white font-semibold text-lg mb-4">Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#inicio" class="hover:text-orange-500">Início</a></li>
+          <li><a href="#sobre" class="hover:text-orange-500">Sobre</a></li>
+          <li><a href="#servicos" class="hover:text-orange-500">Serviços</a></li>
+          <li><a href="#cta" class="hover:text-orange-500">Agendamento</a></li>
+        </ul>
       </div>
-    </section>
-
-    <!-- Rodapé -->
-    <footer class="text-center text-gray-500 text-sm py-10 px-4 fade">
-      <p>© 2025 Clínica Sorriso Ideal. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Scroll Reveal Script -->
-    <script>
-      const fadeEls = document.querySelectorAll('.fade');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      fadeEls.forEach(el => observer.observe(el));
-    </script>
-  </body>
+      <div>
+        <h4 class="text-white font-semibold text-lg mb-4">Contato</h4>
+        <ul class="space-y-2 text-sm">
+          <li>📍 Av. Paulista, 1234 - SP</li>
+          <li>📞 (11) 99888-1234</li>
+          <li>📧 contato@sorrisofacil.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-500 mt-12">© 2025 Sorriso Fácil. Todos os direitos reservados.</div>
+  </footer>
+</body>
 </html>
