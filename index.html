@@ -1,76 +1,237 @@
+<!-- ==================== Parte 1: HERO DENTISTA ==================== -->
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clínica Sorriso Ideal | Avaliação Gratuita</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-    }
-    .glass {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 1rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    }
-    .fade {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-    .fade.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .typewriter {
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: .15em solid #00ffcc;
-      animation: typewriter 3s steps(40, end) forwards, blink 0.75s step-end infinite;
-      width: 0;
-    }
-    @keyframes typewriter {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink {
-      0%, 100% { border-color: transparent }
-      50% { border-color: #00ffcc }
-    }
-  </style>
-</head>
-<body class="min-h-screen">
-  <!-- Hero section -->
-  <section class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-24 gap-10">
-    <div class="max-w-xl fade text-center md:text-left">
-      <h1 class="text-4xl font-bold mb-4">Seu novo <span class="typewriter">sorriso começa aqui.</span></h1>
-      <p class="text-gray-300 text-lg mb-6">Agende sua avaliação gratuita com especialistas em estética dental e transforme seu sorriso.</p>
-      <a href="https://wa.me/5513981213016" target="_blank"
-        class="inline-block bg-green-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300">
-        📱 Agendar pelo WhatsApp
-      </a>
-    </div>
-    <div class="max-w-md w-full fade">
-      <img src="https://images.unsplash.com/photo-1588776814546-ec7e9c3e7fbc?auto=format&fit=crop&w=800&q=80"
-        alt="Dentista atendendo paciente" class="rounded-xl shadow-xl border border-gray-700" />
-    </div>
-  </section>
-  <script>
-    const fadeEls = document.querySelectorAll('.fade');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clínica Sorriso Ideal | Avaliação Gratuita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      }
+      .fade {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease;
+      }
+      .fade.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .typewriter {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: .15em solid #00ffcc;
+        animation: typewriter 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+        width: 0;
+      }
+      @keyframes typewriter {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      @keyframes blink {
+        0%, 100% { border-color: transparent }
+        50% { border-color: #00ffcc }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-24 gap-10">
+      <!-- Texto -->
+      <div class="max-w-xl fade text-center md:text-left">
+        <h1 class="text-4xl font-bold mb-4">Seu novo <span class="typewriter">sorriso começa aqui.</span></h1>
+        <p class="text-gray-300 text-lg mb-6">Agende sua avaliação gratuita com especialistas em estética dental e transforme seu sorriso.</p>
+        <a href="https://wa.me/5513981213016" target="_blank"
+          class="inline-block bg-green-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition duration-300">
+          📱 Agendar pelo WhatsApp
+        </a>
+      </div>
+
+      <!-- Imagem -->
+      <div class="max-w-md w-full fade">
+        <img src="https://images.unsplash.com/photo-1588776814546-ec7e9c3e7fbc?auto=format&fit=crop&w=800&q=80"
+          alt="Dentista atendendo paciente" class="rounded-xl shadow-xl border border-gray-700" />
+      </div>
+    </section>
+
+    <script>
+      // Animação fade-in ao carregar
+      window.addEventListener("load", () => {
+        document.querySelectorAll('.fade').forEach((el, i) => {
+          setTimeout(() => el.classList.add("visible"), i * 300);
+        });
       });
-    }, { threshold: 0.1 });
-    fadeEls.forEach(el => observer.observe(el));
-  </script>
-</body>
+    </script>
+    <!-- Benefícios -->
+    <section class="px-6 py-20 bg-transparent">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-10 fade">Por que escolher a Sorriso Ideal?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="glass p-6 fade hover:scale-105 transition duration-500">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/teeth.png" class="w-12 mx-auto mb-4" alt="Ícone Clareamento"/>
+            <h3 class="text-xl font-semibold mb-2">Clareamento sem dor</h3>
+            <p class="text-gray-300 text-sm">Tecnologia moderna e resultados visíveis desde a primeira sessão.</p>
+          </div>
+
+          <div class="glass p-6 fade hover:scale-105 transition duration-500">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/smile.png" class="w-12 mx-auto mb-4" alt="Ícone Lentes"/>
+            <h3 class="text-xl font-semibold mb-2">Lentes de contato dental</h3>
+            <p class="text-gray-300 text-sm">Estética perfeita com técnicas minimamente invasivas.</p>
+          </div>
+
+          <div class="glass p-6 fade hover:scale-105 transition duration-500">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/dental-braces.png" class="w-12 mx-auto mb-4" alt="Ícone Aparelho"/>
+            <h3 class="text-xl font-semibold mb-2">Ortodontia invisível</h3>
+            <p class="text-gray-300 text-sm">Aparelhos modernos e discretos com alinhamento rápido.</p>
+          </div>
+
+          <div class="glass p-6 fade hover:scale-105 transition duration-500">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/dental-chair.png" class="w-12 mx-auto mb-4" alt="Ícone Consultório"/>
+            <h3 class="text-xl font-semibold mb-2">Ambiente acolhedor</h3>
+            <p class="text-gray-300 text-sm">Consultórios climatizados e equipe atenciosa para sua segurança.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Depoimentos / Prova Social -->
+    <section class="px-6 py-20 bg-transparent">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-10 fade">O que nossos pacientes dizem</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Depoimento 1 -->
+          <div class="glass p-6 fade text-left">
+            <p class="text-sm text-gray-300 italic mb-4">
+              “Eu tinha vergonha de sorrir, mas agora me sinto outra pessoa! O clareamento foi incrível.”
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Juliana" class="w-12 h-12 rounded-full" />
+              <div>
+                <strong class="text-white">Juliana P.</strong><br />
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Depoimento 2 -->
+          <div class="glass p-6 fade text-left">
+            <p class="text-sm text-gray-300 italic mb-4">
+              “Equipe sensacional! Me explicaram tudo com paciência e o ambiente é super limpo e confortável.”
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos" class="w-12 h-12 rounded-full" />
+              <div>
+                <strong class="text-white">Carlos A.</strong><br />
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Depoimento 3 -->
+          <div class="glass p-6 fade text-left">
+            <p class="text-sm text-gray-300 italic mb-4">
+              “Fiz minhas lentes aqui e fiquei chocada com o resultado. Recomendo de olhos fechados!”
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Aline" class="w-12 h-12 rounded-full" />
+              <div>
+                <strong class="text-white">Aline F.</strong><br />
+                <span class="text-yellow-400">★★★★★</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Como Funciona -->
+    <section class="px-6 py-20 bg-transparent">
+      <div class="max-w-4xl mx-auto text-center fade">
+        <h2 class="text-3xl font-bold mb-8">Como funciona?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div class="glass p-6 fade">
+            <h4 class="text-xl font-semibold mb-2">1. Agende sua avaliação</h4>
+            <p class="text-gray-300 text-sm">Clique no botão do WhatsApp e escolha o melhor horário.</p>
+          </div>
+          <div class="glass p-6 fade">
+            <h4 class="text-xl font-semibold mb-2">2. Conheça seu plano</h4>
+            <p class="text-gray-300 text-sm">Na consulta, analisamos seu caso e montamos um plano personalizado.</p>
+          </div>
+          <div class="glass p-6 fade">
+            <h4 class="text-xl font-semibold mb-2">3. Comece seu tratamento</h4>
+            <p class="text-gray-300 text-sm">Inicie o processo com segurança e suporte de ponta a ponta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Oferta com urgência -->
+    <section class="px-6 py-20 bg-transparent">
+      <div class="max-w-3xl mx-auto glass p-10 text-center fade">
+        <h3 class="text-2xl font-bold mb-4">🎁 Oferta exclusiva!</h3>
+        <p class="text-gray-300 mb-6">
+          Os agendamentos realizados até <strong>sexta-feira</strong> ganham <span class="text-green-400 font-semibold">10% de desconto</span> no clareamento dental.
+        </p>
+        <a href="https://wa.me/5513981213016" target="_blank"
+          class="bg-green-500 text-white px-6 py-3 rounded-full shadow hover:scale-110 transition">
+          📆 Agendar agora
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="px-6 py-20 bg-transparent">
+      <div class="max-w-4xl mx-auto fade">
+        <h3 class="text-2xl font-bold mb-6 text-center">❓ Dúvidas frequentes</h3>
+        <div class="space-y-6">
+          <div class="glass p-4">
+            <h4 class="font-semibold">A avaliação é realmente gratuita?</h4>
+            <p class="text-gray-300 text-sm">Sim! Nessa primeira consulta você entende suas necessidades sem custo.</p>
+          </div>
+          <div class="glass p-4">
+            <h4 class="font-semibold">Vocês atendem convênios?</h4>
+            <p class="text-gray-300 text-sm">Atendemos particular e alguns convênios selecionados. Consulte pelo WhatsApp.</p>
+          </div>
+          <div class="glass p-4">
+            <h4 class="font-semibold">Quais formas de pagamento aceitam?</h4>
+            <p class="text-gray-300 text-sm">Pix, boleto, cartões de crédito e parcelamento sob consulta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="text-center text-gray-500 text-sm py-10 px-4 fade">
+      <p>© 2025 Clínica Sorriso Ideal. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+      const fadeEls = document.querySelectorAll('.fade');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      fadeEls.forEach(el => observer.observe(el));
+    </script>
+  </body>
 </html>
