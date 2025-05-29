@@ -6,18 +6,36 @@
   <title>Landing Page Dentistas | Sorriso Fácil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
     .bg-hero {
-      background: url('https://images.unsplash.com/photo-1588776814546-ec7e9c3e7fbc?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background: url('https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
+      filter: blur(3px);
+      transition: filter 0.5s ease;
+    }
+    .bg-hero:hover {
+      filter: blur(0);
     }
   </style>
+  <!-- AOS Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    });
+  </script>
 </head>
 <body class="text-gray-800">
 
   <!-- HEADER -->
-  <header class="bg-white shadow fixed w-full z-50">
+  <header id="mainHeader" class="bg-white transition-all duration-300 fixed w-full z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">Landing Page Dentistas</h1>
+      <h1 class="text-xl font-bold">Sorriso Fácil</h1>
       <nav class="space-x-6 text-sm md:text-base">
         <a href="#inicio" class="text-orange-500 font-semibold">Início</a>
         <a href="#sobre" class="hover:text-orange-500">Sobre</a>
@@ -30,10 +48,16 @@
   </header>
 
   <!-- HERO -->
-  <section id="inicio" class="bg-hero min-h-screen flex flex-col items-center justify-center px-4 text-center text-white pt-32">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">Transforme seu sorriso<br>hoje mesmo</h2>
-    <p class="max-w-xl mb-6">Na Sorriso Fácil, oferecemos tratamentos de odontologia moderna e personalizada para que você tenha um sorriso saudável e bonito.</p>
-    <a href="#contato" class="bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition">AGENDE AGORA</a>
+  <section id="inicio" class="bg-hero min-h-[90vh] flex flex-col items-center justify-center px-4 text-center text-white pt-32">
+    <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
+    <div class="relative z-10 text-center text-white px-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Transforme seu sorriso com a Sorriso Fácil</h1>
+      <p class="text-lg md:text-xl mb-6 max-w-xl mx-auto">Consultas, implantes, estética e muito mais. Atendimento humano e tecnologia de ponta.</p>
+      <a href="https://wa.me/5513981213016" target="_blank"
+         class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition">
+         Agende agora
+      </a>
+    </div>
   </section>
 
   <!-- SERVIÇOS -->
@@ -45,25 +69,49 @@
         Desde estética dental até tratamentos de ortodontia, conheça nossas opções personalizadas para cuidar da sua saúde bucal com profissionalismo e carinho.
       </p>
     </div>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <!-- Estética Dental -->
       <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1606813909357-027c8c38661e?auto=format&fit=crop&w=600&q=80" class="w-full h-56 object-cover" alt="Estética Dental">
+        <div class="overflow-hidden">
+          <img 
+            src="https://images.pexels.com/photos/3812740/pexels-photo-3812740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+            alt="Estética Dental"
+            class="w-full h-56 object-cover rounded-t-xl transform hover:scale-105 transition-all duration-500 ease-in-out"
+          />
+        </div>
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Estética Dental</h3>
           <p class="text-gray-600 mb-4 text-sm">Transforme seu sorriso com clareamento e lentes de contato.</p>
           <a href="#estetica" class="text-orange-500 font-medium hover:underline text-sm">VER MAIS →</a>
         </div>
       </div>
+
+      <!-- Ortodontia -->
       <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1611691542065-d6bafa25746f?auto=format&fit=crop&w=600&q=80" class="w-full h-56 object-cover" alt="Ortodontia">
+        <div class="overflow-hidden">
+          <img 
+            src="https://images.pexels.com/photos/6529216/pexels-photo-6529216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+            alt="Ortodontia"
+            class="w-full h-56 object-cover rounded-t-xl transform hover:scale-105 transition-all duration-500 ease-in-out"
+          />
+        </div>
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Ortodontia</h3>
           <p class="text-gray-600 mb-4 text-sm">Alinhamento dental com aparelhos e alinhadores invisíveis.</p>
           <a href="#ortodontia" class="text-orange-500 font-medium hover:underline text-sm">VER MAIS →</a>
         </div>
       </div>
+
+      <!-- Implantodontia -->
       <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1627513077053-7030a5c55a12?auto=format&fit=crop&w=600&q=80" class="w-full h-56 object-cover" alt="Implantodontia">
+        <div class="overflow-hidden">
+          <img 
+            src="https://images.pexels.com/photos/4269681/pexels-photo-4269681.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+            alt="Implantodontia"
+            class="w-full h-56 object-cover rounded-t-xl transform hover:scale-105 transition-all duration-500 ease-in-out"
+          />
+        </div>
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Implantodontia</h3>
           <p class="text-gray-600 mb-4 text-sm">Implantes e próteses para sorrisos reabilitados.</p>
@@ -81,53 +129,49 @@
       <p class="text-gray-600 text-base">A Sorriso Fácil é uma clínica odontológica que prioriza o atendimento humanizado e a tecnologia de ponta.</p>
     </div>
     <div class="max-w-5xl mx-auto">
-      <img src="https://images.unsplash.com/photo-1606813909357-027c8c38661e?auto=format&fit=crop&w=1200&q=80" alt="Imagem clínica Sorriso Fácil" class="rounded-2xl w-full shadow-md" />
-    </div>
-  </section>
-
-  <!-- DEPOIMENTOS -->
-  <section class="bg-cover bg-center bg-no-repeat py-20 px-6" style="background-image: url('https://images.unsplash.com/photo-1588776814546-ec7e9c3e7fbc?auto=format&fit=crop&w=1600&q=80'); background-color: rgba(0,0,0,0.5); background-blend-mode: overlay;">
-    <div class="max-w-6xl mx-auto text-white text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12">O que nossos pacientes dizem</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white text-gray-800 rounded-xl p-6 shadow-md">
-          <div class="text-orange-500 text-3xl mb-4">“</div>
-          <p class="text-sm mb-4">Excelente atendimento e resultados surpreendentes. Amei meu novo sorriso!</p>
-          <div class="flex items-center gap-3 mt-4">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Lucas Silva" class="w-10 h-10 rounded-full">
-            <span class="font-semibold text-sm">Lucas Silva</span>
-          </div>
-        </div>
-        <div class="bg-white text-gray-800 rounded-xl p-6 shadow-md">
-          <div class="text-orange-500 text-3xl mb-4">“</div>
-          <p class="text-sm mb-4">Profissionais atenciosos e sempre prontos para responder às minhas dúvidas.</p>
-          <div class="flex items-center gap-3 mt-4">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Costa" class="w-10 h-10 rounded-full">
-            <span class="font-semibold text-sm">Ana Costa</span>
-          </div>
-        </div>
-        <div class="bg-white text-gray-800 rounded-xl p-6 shadow-md">
-          <div class="text-orange-500 text-3xl mb-4">“</div>
-          <p class="text-sm mb-4">Meus filhos adoram ir ao dentista por aqui! Atendimento especial para crianças.</p>
-          <div class="flex items-center gap-3 mt-4">
-            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Carlos Almeida" class="w-10 h-10 rounded-full">
-            <span class="font-semibold text-sm">Carlos Almeida</span>
-          </div>
-        </div>
+      <div class="overflow-hidden rounded-2xl shadow-md">
+        <img 
+          src="https://images.pexels.com/photos/4269950/pexels-photo-4269950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+          alt="Imagem clínica Sorriso Fácil" 
+          class="w-full h-90 object-cover"
+        />
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- AUTORIDADE -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center mb-12" data-aos="fade-up">
+      <p class="uppercase text-sm text-gray-400 tracking-wider">CONFIRA NOSSOS NÚMEROS</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">A clínica que transforma vidas há mais de uma década</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Com milhares de pacientes satisfeitos e uma equipe apaixonada por sorrisos, a Sorriso Fácil se tornou referência em odontologia no Brasil.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
+      <div data-aos="zoom-in">
+        <h3 class="text-5xl font-bold text-orange-500">+10.000</h3>
+        <p class="text-gray-700 mt-2 text-lg">Pacientes atendidos</p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-5xl font-bold text-orange-500">15 anos</h3>
+        <p class="text-gray-700 mt-2 text-lg">de experiência</p>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="200">
+        <h3 class="text-5xl font-bold text-orange-500">98%</h3>
+        <p class="text-gray-700 mt-2 text-lg">de aprovação dos pacientes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section id="cta" class="bg-gray-100 py-20 px-6">
     <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl p-10 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Não espere mais para cuidar do seu sorriso</h2>
       <p class="text-gray-600 mb-6">Agende sua avaliação gratuita com um de nossos especialistas agora mesmo e descubra como transformar sua autoestima.</p>
-      <a href="https://wa.me/5513981213016" target="_blank" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition">📅 AGENDE AGORA</a>
+      <a href="https://wa.me/5513981213016" target="_blank" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition"> AGENDE AGORA</a>
     </div>
   </section>
 
-  <!-- RODAPÉ -->
+  <!-- FOOTER -->
   <footer class="bg-gray-900 text-gray-300 py-16 px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
       <div>
@@ -145,14 +189,35 @@
       </div>
       <div>
         <h4 class="text-white font-semibold text-lg mb-4">Contato</h4>
-        <ul class="space-y-2 text-sm">
+        <ul class="space-y-2 text-sm mb-4">
           <li>📍 Av. Paulista, 1234 - SP</li>
           <li>📞 (11) 99888-1234</li>
           <li>📧 contato@sorrisofacil.com</li>
         </ul>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://instagram.com" target="_blank" title="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="h-6 w-6 hover:scale-110 transition" />
+          </a>
+          <a href="https://facebook.com" target="_blank" title="Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="h-6 w-6 hover:scale-110 transition" />
+          </a>
+        </div>
       </div>
     </div>
     <div class="text-center text-xs text-gray-500 mt-12">© 2025 Sorriso Fácil. Todos os direitos reservados.</div>
   </footer>
+
+  <script>
+    // Efeito de header translúcido ao rolar
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('bg-opacity-70', 'backdrop-blur-md');
+      } else {
+        header.classList.remove('bg-opacity-70', 'backdrop-blur-md');
+      }
+    });
+  </script>
+
 </body>
 </html>
